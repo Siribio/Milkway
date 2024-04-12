@@ -13,3 +13,7 @@ span#btn_return{
     cursor: pointer;
 }
 
+.img_comp{
+    background-image: url(../../img/top-view-delicious-ice-cream-with-cookies.webp);
+    background-position: right center;
+}

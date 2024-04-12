@@ -8,32 +8,32 @@
     <link rel="stylesheet" href="./src/css/main.css">
     <link rel="stylesheet" href="./src/css/login/style.css">
 </head>
-<body>
-    <section class="login_sec">
+<body ">
+    <section class="login_sec container-fluid col">
         <div class="div_btn_return">
             <span id="btn_return">< Voltar</span>
         </div>
 
         <div class="img_logo">
-            <img src="" alt="">
+            <img src="./src/img/logo_milkway.png" alt="">
         </div>
 
         <h3>Entrar</h3>
 
-        <form action="">
+        <form action="" class="row">
             <label for="user_cred">Usuario</label>
             <input id="user_cred" type="text">
             <label for="pass_cred">Senha</label>
             <input id="pass_cred" type="password">
         </form>
 
-        <div class="forget_pass">
-            <div class="check_pass">
-                <input type="checkbox" name="" id="see_pass">
-                <p>Visualizar senha</p>
+        <div class="forget_pass row">
+            <div class="check_pass col row" >
+                <input type="checkbox" name="" id="see_pass" class="col">
+                <p class="col">Visualizar senha</p>
             </div>
 
-            <span class="forget_pass_btn">Esqueci minha senha</span>
+            <span class="forget_pass_btn col">Esqueci minha senha</span>
         </div>
 
         <button id="submit_btn">Entrar</button>
@@ -48,8 +48,7 @@
         <span>2023 - ©Milkway Gelato</span>
     </section>
 
-    <section class="img_comp">
-        <img src="./src/img/top-view-delicious-ice-cream-with-cookies 1.png" alt="">
+    <section class="img_comp col-9 p-0">
     </section>
 </body>
 </html>
