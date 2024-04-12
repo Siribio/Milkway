@@ -1,19 +1,32 @@
-body{
+body {
+  display: flex;
+  width: 100dvw;
+  height: 100dvh;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+span#btn_return {
+  color: var(--purple-medium);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.img_comp {
+  background-image: url(../../img/top-view-delicious-ice-cream-with-cookies.webp);
+  background-position: right center;
+}
+
+div.img_logo{
+    margin-top: 10dvh;
+}
+
+h3{
+    font-weight: 600;
+    margin-top: 2dvh;
+}
+
+input.input_default{
     display: flex;
-    width: 100dvw;
-    height: 100dvh;
-    box-sizing: border-box;
-    font-family: "Nunito", sans-serif;
-
-}
-
-span#btn_return{
-    color: var(--purple-medium);
-    font-size: 15px;
-    cursor: pointer;
-}
-
-.img_comp{
-    background-image: url(../../img/top-view-delicious-ice-cream-with-cookies.webp);
-    background-position: right center;
+    width:  82%;
 }
