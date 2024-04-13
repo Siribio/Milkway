@@ -17,16 +17,126 @@ span#btn_return {
   background-position: right center;
 }
 
-div.img_logo{
-    margin-top: 10dvh;
+div.img_logo {
+  margin-top: 5dvh;
 }
 
-h3{
-    font-weight: 600;
-    margin-top: 2dvh;
+h3 {
+  font-weight: 600;
+  margin-top: 2dvh;
 }
 
-input.input_default{
-    display: flex;
-    width:  82%;
+input.input_default {
+  display: flex;
+  width: 82%;
+  border-radius: 10px;
+  height: 60px;
+  border: 1px solid #b6b6b6;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+form.form_login {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+label.label_sty {
+  display: flex;
+  width: 84%;
+  font-size: 17px;
+  margin-top: 15px;
+}
+
+#see_pass {
+  display: flex;
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+}
+
+.forget_pass {
+  display: flex;
+  width: 91%;
+  margin: auto;
+  margin-top: 15px;
+  align-items: center;
+  font-size: 12px;
+}
+
+.forget_pass_btn {
+  text-align: right;
+  margin: auto;
+  color: var(--purple-medium);
+  cursor: pointer;
+  font-weight: 1000;
+  transition: all 0.2s;
+}
+.forget_pass_btn:hover {
+  text-decoration: underline;
+}
+
+button#submit_btn {
+  display: flex;
+  width: 87%;
+  margin: 0 auto;
+  border: none;
+  margin-top: 32px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 9px;
+  background-color: var(--purple-soft);
+  transition: all 0.3s;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+button#submit_btn:hover {
+  background-color: var(--purple-medium);
+  transform: scale(1.03);
+}
+
+div.signin_sec {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  margin-top: 31px;
+  font-size: 14px;
+}
+
+.sign_btn {
+  display: flex;
+  color: var(--purple-medium);
+  margin-left: 2%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sign_btn:hover {
+  text-decoration: underline;
+  color: var(--purple-medium);
+}
+
+#btn_return {
+  display: flex;
+  margin-top: 15px;
+  cursor: pointer;
+  margin-left: 2%;
+  transition: all 0.3s;
+}
+
+#btn_return:hover {
+  text-decoration: underline;
+}
+
+.name_rights{
+  display: flex;
+    font-size: 12px;
+    margin-top: 160px;
+    justify-content: center;
 }
