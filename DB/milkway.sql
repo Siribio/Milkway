@@ -34,3 +34,6 @@ insert into estoque values
     (null, 'CHOCOLATE', 50.0, 10.0),
     (null, 'MORANGO', 30.0, 15.0),
     (null, 'BAUNILHJA', 20.0, 20.0)
+
+
+insert into usuario values (null, 'eduardo', 'eduardo123', 'eduardo@email.com', 'null', 'ponte', 'aleatorio')
