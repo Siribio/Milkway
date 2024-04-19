@@ -1,6 +1,14 @@
 const see_pass = document.querySelector('#see_pass');
 const pass = document.querySelector('#pass_cred');
+const cadastro_se = document.querySelector('.sign_btn');
+const login_sec = document.querySelector('.login_sec');
+const cadastro = document.querySelector('.cadastro_sec')
 
+cadastro_se.addEventListener('click', () => {
+    console.log('click')
+    login_sec.style.display = 'none';
+    cadastro.style.display = 'flex';
+});
 
 see_pass.addEventListener('click', () => {
     let pass = document.querySelector('#pass_cred');

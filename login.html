@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./src/css/login/style.css">
     <link rel="icon" href="./src/img/logo_milkway.png" type="image/png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./src/css/login_cadastro.css">
     <style>
         .error-text {
             width: 82%;
@@ -22,6 +23,7 @@
             background-color: #ff9c9c;
             border: 2px solid red !important;
         }
+
     </style>
 
 </head>
@@ -64,6 +66,28 @@
 
 
     <span class="name_rights">2023 - ©Milkway Gelato</span>
+    </section>
+
+    <section class="cadastro_sec container-fluid col">
+        <div class="div_btn_return">
+            <span id="btn_return">
+                < Voltar</span>
+        </div>
+
+        <h3 class="cadastro_h3">Cadastre-se</h3>
+
+        <form action="" class="row form_cadastro">
+            <label class="label_sty labael_c" for="user_cred">Usuário</label>
+            <input id="user_cred" class="input_default" type="text" placeholder="">
+            <label class="label_sty labael_c" for="pass_cred">E-mail</label>
+            <input id="pass_cred" class="input_default" type="password">
+            <label class="label_sty labael_c" for="pass_cred">Senha</label>
+            <input id="pass_cred" class="input_default" type="password">
+            <label class="label_sty labael_c" for="pass_cred">Confirmar senha</label>
+            <input id="pass_cred" class="input_default" type="password">
+
+            <button id="btn_cadastro">Criar conta</button>
+        </form>
     </section>
 
     <section class="img_comp col-9 p-0">

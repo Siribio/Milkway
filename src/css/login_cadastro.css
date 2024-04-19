@@ -1,0 +1,102 @@
+span#btn_return {
+  color: var(--purple-medium);
+  font-size: 2vh;
+  cursor: pointer;
+}
+
+.img_comp {
+  background-image: url(../img/top-view-delicious-ice-cream-with-cookies.webp);
+  background-position: right center;
+}
+
+input.input_default {
+  display: flex;
+  width: 82%;
+  border-radius: 7px;
+  height: 5.5vh;
+  border: 1px solid #b6b6b6;
+  font-size: 17px;
+  margin-top: 0.5vh;
+}
+
+label.label_sty {
+  display: flex;
+  width: 84%;
+  font-size: 17px;
+  margin-top: 2vh;
+}
+
+button#submit_btn {
+  display: flex;
+  width: 87%;
+  margin: 0 auto;
+  border: none;
+  margin-top: 3vh;
+  height: 7vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 9px;
+  background-color: var(--purple-soft);
+  transition: all 0.3s;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+button#submit_btn:hover {
+  background-color: var(--purple-medium);
+  transform: scale(1.03);
+}
+
+
+#btn_return {
+    display: flex;
+    margin-top: 2vh;
+    cursor: pointer;
+    margin-left: 2%;
+    transition: all 0.3s;
+  }
+  
+  #btn_return:hover {
+    text-decoration: underline;
+  }
+
+section.cadastro_sec{
+  flex-direction: column;
+}
+
+.cadastro_h3{
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh
+}
+
+.labael_c{
+  margin-top: 3vh !important;
+}
+
+button#btn_cadastro {
+  display: flex;
+  width: 87%;
+  margin: 0 auto;
+  border: none;
+  margin-top: 5vh;
+  height: 7vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 9px;
+  background-color: var(--purple-soft);
+  transition: all 0.3s;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+button#btn_cadastro:hover {
+  background-color: var(--purple-medium);
+  transform: scale(1.03);
+}

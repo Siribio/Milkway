@@ -6,53 +6,28 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
-span#btn_return {
-  color: var(--purple-medium);
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.img_comp {
-  background-image: url(../../img/top-view-delicious-ice-cream-with-cookies.webp);
-  background-position: right center;
-}
-
 div.img_logo {
-  margin-top: 5dvh;
+  margin-top: 5vh;
 }
 
 h3 {
   font-weight: 600;
-  margin-top: 2dvh;
+  margin-top: 3vh;
 }
 
-input.input_default {
+form.form_login{
   display: flex;
-  width: 82%;
-  border-radius: 10px;
-  height: 60px;
-  border: 1px solid #b6b6b6;
-  font-size: 17px;
-  margin-top: 5px;
 }
 
-form.form_login {
-  display: flex;
+form.form_login, form.form_cadastro {
   justify-content: center;
-  margin-top: 30px;
-}
-
-label.label_sty {
-  display: flex;
-  width: 84%;
-  font-size: 17px;
-  margin-top: 15px;
+  margin-top: 2.5vh;
 }
 
 #see_pass {
   display: flex;
-  height: 15px;
-  width: 15px;
+  height: 2vh;
+  width: 2vh;
   margin-right: 10px;
 }
 
@@ -60,7 +35,7 @@ label.label_sty {
   display: flex;
   width: 91%;
   margin: auto;
-  margin-top: 15px;
+  margin-top: 2vh;
   align-items: center;
   font-size: 12px;
 }
@@ -77,35 +52,11 @@ label.label_sty {
   text-decoration: underline;
 }
 
-button#submit_btn {
-  display: flex;
-  width: 87%;
-  margin: 0 auto;
-  border: none;
-  margin-top: 32px;
-  height: 60px;
-  justify-content: center;
-  align-items: center;
-  font-size: 23px;
-  color: #ffffff;
-  cursor: pointer;
-  border-radius: 9px;
-  background-color: var(--purple-soft);
-  transition: all 0.3s;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-}
-
-button#submit_btn:hover {
-  background-color: var(--purple-medium);
-  transform: scale(1.03);
-}
-
 div.signin_sec {
   display: flex;
   margin: auto;
   justify-content: center;
-  margin-top: 31px;
+  margin-top: 3vh;
   font-size: 14px;
 }
 
@@ -122,22 +73,19 @@ div.signin_sec {
   color: var(--purple-medium);
 }
 
-#btn_return {
-  display: flex;
-  margin-top: 15px;
-  cursor: pointer;
-  margin-left: 2%;
-  transition: all 0.3s;
-}
-
-#btn_return:hover {
-  text-decoration: underline;
-}
-
 .name_rights {
   display: flex;
   font-size: 12px;
-  margin-top: 160px;
+  margin-top: 7vh;
   justify-content: center;
 }
 
+@media only screen and (max-width: 900px) {
+  .img_comp {
+    display: none;
+  }
+}
+
+.cadastro_sec{
+  display: none;
+}

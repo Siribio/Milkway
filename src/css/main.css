@@ -3,5 +3,19 @@
 :root {
     --purple-medium: #BE35FF;
     --purple-soft: #DC93FF;
+    --purple-header: #F6E3FF;
+    --dark-background: #1E1C19;
+    --dark-input: #3B3B3B;
+    --dark-button: #2F1932;
+    --dark-button-hover:#47264B;
+    --dark-font: #F2E2AF;
+    --dark-medium: #996D88;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
 }
 
