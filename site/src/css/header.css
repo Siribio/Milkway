@@ -1,0 +1,165 @@
+header {
+  display: flex;
+  height: 90px;
+  width: 100dvw;
+  background-color: var(--purple-header);
+  margin-top: 20px;
+}
+
+body {
+  display: flex;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0 4%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo_nav {
+  display: flex;
+  height: 80px;
+  width: 80px;
+}
+
+.nome_nav {
+  color: var(--purple-medium);
+  font-size: 2.8rem;
+  font-weight: 800;
+  padding-left: 3%;
+}
+
+.list_nav {
+  display: flex;
+  width: 47%;
+  font-size: 1.2rem;
+  list-style-type: none;
+  font-weight: 700;
+  justify-content: space-between;
+  color: var(--purple-soft);
+  height: 100%;
+  align-items: center;
+}
+
+li {
+  display: flex;
+  height: 80%;
+  padding: 0 2%;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 8px;
+  transition: all 0.4s;
+}
+
+li:hover {
+  background-color: #ead2f5;
+}
+
+.wrapper_nav {
+  display: flex;
+  align-items: center;
+  width: 45%;
+}
+
+.mobile_menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.mobile_menu div {
+  width: 32px;
+  height: 4px;
+  background-color: #741b9e;
+  margin: 3px;
+  transition: 0.3s;
+  border-radius: 27px;
+}
+
+@media only screen and (max-width: 1368px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    margin-top: 0;
+  }
+
+  .wrapper_nav {
+    width: 65%;
+  }
+
+  .mobile_menu {
+    display: flex;
+    position: relative;
+    z-index: 1;
+  }
+
+  .list_nav li {
+    margin-left: 0;
+    opacity: 0;
+    font-size: 0.9rem;
+    height: 15%;
+    width: 92%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .list_nav {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 50vw;
+    height: 100vh;
+    background-color: #f0f0f0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    padding-top: 90px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+
+  .nome_nav {
+    color: var(--purple-medium);
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding-left: 3%;
+  }
+}
+
+.list_nav.active {
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile_menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile_menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile_menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
