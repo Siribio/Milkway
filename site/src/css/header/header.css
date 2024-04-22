@@ -76,6 +76,19 @@ li:hover {
   border-radius: 27px;
 }
 
+a {
+  color: var(--purple-soft) !important;
+  /* Cor do texto */
+  text-decoration: none !important; /* Remove o sublinhado */
+}
+
+a:hover,
+a:active {
+  color: var(--purple-soft) !important;
+  /* Cor do texto */
+  text-decoration: none !important; /* Remove o sublinhado */
+}
+
 @media only screen and (max-width: 1368px) {
   body {
     overflow-x: hidden;

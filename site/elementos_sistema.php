@@ -32,11 +32,11 @@ class elementos_sistema
                 <div class="line3"></div>
             </div>
             <ul class="list_nav">
-                <li>HOME</li>
-                <li>SOBRE NÓS</li>
-                <li>LOCALIZAÇÃO</li>
-                <li>PEDIDO</li>
-                <li id="perfil_nav">EDUARDO</li>
+                <li class="li_header"><a>HOME</a></li>
+                <li class="li_header"><a href="sobre.php">SOBRE NÓS</a></li>
+                <li class="li_header"><a href="localizacao.php">LOCALIZAÇÃO</a></li>
+                <li class="li_header"><a href="pedido.php">PEDIDO</a></li>
+                <li class="li_header" id="perfil_nav"><a href="usuario.php">EDUARDO</a></li>
             </ul>
         </nav>
     </header>
@@ -61,6 +61,18 @@ class elementos_sistema
         ';
 
         echo $footer;
+    }
+
+    public function btn_buy()
+    {
+        $buy = '
+        <div class="btn_buy_car">
+            <i class="bx bx-cart-alt"></i>
+        </div>
+        ';
+
+        echo $buy;
+
     }
 }
 
