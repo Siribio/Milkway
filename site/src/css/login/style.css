@@ -4,6 +4,7 @@ body {
   height: 100dvh;
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
+  flex-direction: row;
 }
 
 div.img_logo {
@@ -81,9 +82,7 @@ div.signin_sec {
 }
 
 @media only screen and (max-width: 900px) {
-  .img_comp {
-    display: none;
-  }
+
 }
 
 .cadastro_sec{

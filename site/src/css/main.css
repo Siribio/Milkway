@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+@font-face {
+    font-family: 'quartzo'; /* Define um nome para sua fonte */
+    src: url('./font/quartzo.ttf');
+}
+
 :root {
     --purple-medium: #BE35FF;
     --purple-soft: #DC93FF;
@@ -25,7 +30,7 @@
 
 body {
     display: flex;
-    width: 100dvw;
+    max-width: 100dvw;
     height: 100dvh;
     flex-direction: column;
 }

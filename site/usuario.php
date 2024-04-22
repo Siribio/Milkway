@@ -9,9 +9,9 @@ require 'elementos_sistema.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>usuario</title>
-    <link rel="stylesheet" href="./src/css/header.css">
+    <link rel="stylesheet" href="./src/css/header/header.css">
     <link rel="stylesheet" href="./src/css/main.css">
-    <link rel="stylesheet" href="./src/css/usuario.css">
+    <link rel="stylesheet" href="./src/css/usuario/usuario.css">
     <link rel="icon" href="./src/img/logo_milkway.webp type=" image/png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
