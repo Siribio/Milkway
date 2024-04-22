@@ -1,11 +1,11 @@
 <?php
 
-if(isset($_SESSION)){
+if (isset($_SESSION)) {
     session_start();
 }
 
-if(isset($_SESSION['id'])){
-   die("Você não pode acessar esta página! Logue por gentileza.")
+if (isset($_SESSION['id'])) {
+    die("Você não pode acessar esta página! Logue por gentileza.");
 }
 
 

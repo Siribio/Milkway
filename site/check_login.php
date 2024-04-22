@@ -2,17 +2,17 @@
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL)
+error_reporting(E_ALL);
 
 require 'conexao.php';
 $conn = connectionFactory::conexaoMysqli();
 
-if(!$conn){
+if (!$conn) {
     echo json_encode(["error" => "A conexão com o banco de dados falhou: " . mysqli_error()]);
     exit;
 }
 
-if(isset($_POST['user_input'])){
+if (isset($_POST['user_input'])) {
     $username = mysqli_real_escape_string($conn, $_POST['user_input']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
@@ -24,10 +24,10 @@ if(isset($_POST['user_input'])){
     $query = "SELECT `senha` FROM `usuario` WHERE `nome` = '$username'";
     $result = mysqli_query($conn, $query);
 
-    if(mysqli_num_rows($result) == 1){
+    if (mysqli_num_rows($result) == 1) {
 
     }
-    
+
 }
 
 

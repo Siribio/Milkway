@@ -10,6 +10,10 @@
     --dark-button-hover:#47264B;
     --dark-font: #F2E2AF;
     --dark-medium: #996D88;
+    --border-gray: #d8d8d8;
+    --light-black: #262626;
+    --darker-purple: #452c7a;
+    --btn-green: #9DDE13;
 }
 
 *{
@@ -19,3 +23,10 @@
     font-family: "Nunito", sans-serif;
 }
 
+body {
+    display: flex;
+    width: 100dvw;
+    height: 100dvh;
+    flex-direction: column;
+}
+  
