@@ -44,6 +44,24 @@ class elementos_sistema
 
         echo $nav;
     }
+
+    public function imprimir_footer()
+    {
+        $footer = '
+        <footer>
+        <div class="wrapper_footer">
+            <section class="address">
+                <span id="ft_city"> <i class="bx bx-circle" style="color:#ffffff"></i>São Paulo</span>
+                <span class="ft_locale">Shopping SP Plaza, Torre A <br> Sala 1305 - Liberdade</span>
+            </section>
+
+            <span>© 2024 Milkway. Todos os direitos reservados.</span>
+        </div>
+        </footer>
+        ';
+
+        echo $footer;
+    }
 }
 
 ?>
