@@ -32,7 +32,7 @@ class elementos_sistema
                 <div class="line3"></div>
             </div>
             <ul class="list_nav">
-                <li class="li_header"><a>HOME</a></li>
+                <li class="li_header"><a href="home.php">HOME</a></li>
                 <li class="li_header"><a href="sobre.php">SOBRE NÓS</a></li>
                 <li class="li_header"><a href="localizacao.php">LOCALIZAÇÃO</a></li>
                 <li class="li_header"><a href="pedido.php">PEDIDO</a></li>
