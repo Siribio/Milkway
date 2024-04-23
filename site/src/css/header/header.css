@@ -31,7 +31,7 @@ nav {
 .list_nav {
   display: flex;
   width: 47%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   list-style-type: none;
   font-weight: 700;
   justify-content: space-between;
@@ -89,7 +89,7 @@ a:active {
   text-decoration: none !important; /* Remove o sublinhado */
 }
 
-@media only screen and (max-width: 1368px) {
+@media only screen and (max-width: 1250px) {
   body {
     overflow-x: hidden;
   }
