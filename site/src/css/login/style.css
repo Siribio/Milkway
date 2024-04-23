@@ -5,6 +5,7 @@ body {
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
   flex-direction: row;
+  overflow-x: hidden;
 }
 
 div.img_logo {
