@@ -2,6 +2,8 @@
 body{
     background-color:#EBC0FF;
     font-weight:900;
+    overflow-x: hidden;
+
 }
 
 /* Navbar */
