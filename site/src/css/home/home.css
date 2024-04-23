@@ -1,0 +1,161 @@
+
+body{
+    background-color:#EBC0FF;
+    font-weight:900;
+}
+
+/* Navbar */
+
+.navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #F6E3FF;
+    overflow: hidden;
+    position:fixed;
+    top: 1.5%;
+    right: 0;
+    border-end-start-radius: 50px;
+    border-start-start-radius: 50px;
+}
+.navbar ul li{
+    float: right;
+    font-size: x-large;
+    font-weight:900;
+}
+
+.navbar ul li a{
+    display: block;
+    color: #DC93FF;
+    text-decoration: none;
+    padding: 30px 40px;
+}
+
+
+li a:hover:not(.ativo){
+    color:#BE35FF ;
+}
+
+.ativo{
+    color:#BE35FF;
+}
+
+main .home{
+   
+}
+
+/* header e barra lateral */
+.retangulo{
+    background-color: #f6e3ff;
+    width: 115px;
+    height: 100%;
+    bottom:0;
+    top: 0;
+    position: fixed;
+
+}
+
+
+.logo{
+    position: fixed;
+    background-color: #DC93FF;
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    margin-left: 12px;
+    margin-top: 20px;
+
+
+}
+
+.logo img{
+    position:fixed;
+    margin-top: 7px;
+    margin-left: 7px;
+    max-width: 77px;
+    width: auto;
+    height: auto;
+}
+
+.titulo{
+    margin-left:10%;
+    margin-top: 20px;
+    color: #BE35FF;
+    font-size: 35px;
+}
+
+.esquerda{
+    margin-top: 300px;
+}
+
+.ponta{
+    background-color: white;
+    width: 600px;
+    margin-left: 50px;
+    border-start-end-radius: 100px;
+    border-end-end-radius: 100px;
+    overflow:hidden;
+    margin-top: -80px;
+}
+
+.ponta p{
+    color: #741B9E;
+    margin-left:100px;
+    font-family:Impact;
+    font-size:65px;
+    font-weight: normal;
+    overflow: hidden;
+    text-align: left;
+    
+}
+
+.leite{
+    position:absolute;
+    margin-left: 100px;
+    margin-top: -100px;
+    max-width: 700px;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+.texto{
+    font-weight:800px ;
+    margin-left: 150px;
+    margin-top: 300px;
+    color: #741B9E;
+    font-size: 40px;
+
+}
+
+
+.bola{
+    max-width: 900px;
+    margin-top: -800px;
+    margin-left: 45% ;
+    z-index: -1;
+
+}
+
+footer{
+    background-color: black;
+    height: 200px;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+
+footer p{
+    color: white;
+    font-size: 16px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+@media screen and (max-width:762px){
+
+    .bola{
+        display: block;
+        position: relative;
+    }
+    
+}
