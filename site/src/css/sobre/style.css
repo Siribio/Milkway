@@ -54,3 +54,26 @@ p{
 .wrapper_img_sec img{
     height: 400px;
 }
+
+@media only screen and (max-width: 900px) {
+    .wrapper_img_sec{
+        display: none;
+    }
+
+    main.about_us{
+        text-align: center;
+    }
+
+    section{
+        justify-content: center !important;
+    }
+
+    .first_sec{
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .text_wrapper {
+        width: 85%;
+    }
+}
