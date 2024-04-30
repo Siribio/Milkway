@@ -1,0 +1,120 @@
+.pedido{
+  justify-content:center;
+  align-items: center;
+  display:block;
+  text-align: center;
+
+}
+
+.title {
+  padding: 100px;
+  background-image: url(image\ 5.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-size: 80px;
+  font-weight: 900;
+  display: block;
+  margin-left: 0;
+  text-align: center;
+}
+
+hr {
+  margin-left: 10%;
+  width: 80%;
+  padding: 1px;
+  background-color: black;
+  border: none;
+  border-radius: 1px;
+}
+
+.l1-p1 {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.sub-title {
+  font-size: 30px;
+  font-weight: 900;
+}
+.part2 .sub-title{
+  word-spacing:70vh;
+}
+
+.part1 .sub-title{
+  word-spacing:70vh;
+}
+
+.part1,
+.part2:not(hr) {
+  margin-top: 100px;
+
+
+}
+
+.list1,
+.list2 {
+  font-size: x-large;
+}
+
+.l1-p1 input {
+  appearance: none;
+  width: 37px;
+  
+}
+
+input {
+  font-size: x-large;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: black;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 250px;
+  
+}
+
+.btn button {
+  margin-bottom: 100px;
+  font-weight: 700;
+  font-size: 30px;
+  color: white;
+  background-color: #fb8315;
+  border-style: none;
+  cursor: pointer;
+  border-radius: 10px;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  border: 5px solid;
+  border-color: #fb8315;
+}
+
+.btn button:hover {
+  justify-content: center;
+  color: #fb8315;
+  border: 5px solid;
+  border-color: #fb8315;
+  background-color: white;
+}
+
+@media (max-width: 900px) {
+
+  .part1 .sub-title{
+
+    word-spacing:10vh;
+  }
+
+  .part2 .sub-title{
+    word-spacing:0;
+  }
+
+  .title{
+    font-size: 40px;
+  }
+
+}
