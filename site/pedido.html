@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/main.css" />
+    <link rel="stylesheet" href="src/css/footer/footer.css" />
+    <link rel="stylesheet" href="src/css/pedido/pedido.css" />
+    <title>Pedido</title>
+  </head>
+  <body>
+    <main class="pedido">
+      <section class="title">MONTE SEU SORVETE</section>
+      <section class="part1">
+        <div class="sub-title">
+          Sabores: Valor:
+          <hr />
+        </div>
+        <div class="list1">
+          <form class="l1-p1" action="">
+            <label for="subtt1">Quantos sabores deseja (max 3):</label>
+            <input
+              size="1"
+              max="3"
+              min="1"
+              placeholder="3"
+              type="number"
+              name="quantidade"
+              id="subtt1"
+            />
+          </form>
+          <form action="">
+            <label for="subtt2">selecione o sabor 1:</label>
+            <select name="sabor" id="sabor1">
+              <option>selecione</option>
+              <option>morango</option>
+              <option>chocolate</option>
+              <option>morango</option></select> 
+              &emsp;R$6,00<br /><br />
+            <label for="subtt3">selecione o sabor 2:</label>
+            <select name="sabor" id="sabor2">
+              <option>selecione</option>
+              <option>morango</option>
+              <option>chocolate</option>
+              <option>baunilha</option></select> &emsp;R$6,00<br/><br/>
+            <label for="subtt4">selecione o sabor 3:</label>
+            <select name="sabor" id="sabor3">
+              <option>selecione</option>
+              <option>morango</option>
+              <option>chocolate</option>
+              <option>baunilha</option></select> &emsp;R$6,00
+          </form>
+        </div>
+      </section>
+      <section class="part2">
+        <div class="sub-title">
+          Acompanhamentos: &emsp;
+          <hr />
+          <br />
+        </div>
+        <div class="list2">
+          <form action="">
+            <label for="subtt5">selecione o adicional:</label>
+            <select name="sabor" id="add1" onchange="checkSelections()">
+              <option>selecione</option>
+              <option>Granola</option>
+              <option>Leite ninho</option>
+              <option>M&M's</option>
+              <option>Cereal</option>
+              <option>Uva</option>
+              <option>Morango</option></select> &emsp;R$6,00<br /><br />
+            <label for="subtt6">selecione o adicional:</label>
+            <select name="sabor" id="add2" onchange="checkSelections()">
+              <option>selecione</option>
+              <option>Granola</option>
+              <option>Leite ninho</option>
+              <option>M&M's</option>
+              <option>Cereal</option>
+              <option>Uva</option>
+              <option>Morango</option></select> &emsp;R$6,00<br /><br />
+            <label for="subtt7">selecione o adicional:</label>
+            <select name="sabor" id="add3" onchange="checkSelections()">
+              <option>selecione</option>
+              <option>Granola</option>
+              <option>Leite ninho</option>
+              <option>M&M's</option>
+              <option>Cereal</option>
+              <option>Uva</option>
+              <option>Morango</option></select> &emsp;R$6,00<br /><br />
+            <label for="subtt8">selecione o adicional:</label>
+            <select name="sabor" id="add4" onchange="checkSelections()">
+              <option>selecione</option>
+              <option>Granola</option>
+              <option>Leite ninho</option>
+              <option>M&M's</option>
+              <option>Cereal</option>
+              <option>Uva</option>
+              <option>Morango</option></select> &emsp;R$6,00<br /><br />
+            <label for="subtt9">selecione o adicional:</label>
+            <select name="sabor" id="add5" onchange="checkSelections()">
+              <option>selecione</option>
+              <option>Granola</option>
+              <option>Leite ninho</option>
+              <option>M&M's</option>
+              <option>Cereal</option>
+              <option>Uva</option>
+              <option>Morango</option></select> &emsp;R$6,00<br /><br />
+            <label for="subtt0">selecione o adicional:</label>
+            <select name="sabor" id="add6" onchange="checkSelections()">
+              <option>selecione</option>
+              <option>Granola</option>
+              <option>Leite ninho</option>
+              <option>M&M's</option>
+              <option>Cereal</option>
+              <option>Uva</option>
+              <option>Morango</option></select> &emsp;R$6,00<br /><br />
+          </form>
+        </div>
+      </section>
+      <section class="btn">
+        <button>Adicionar ao carrinho</button>
+      </section>
+    </main>
+    <script src="src/js/pedido.js"></script>
+  </body>
+</html>
