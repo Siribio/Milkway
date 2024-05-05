@@ -23,9 +23,23 @@ class SendSigninForm {
     }
 
     send_form_data(form){
-        console.log('click')
+        fetch(this.url, {
+            method: "POST",
+            body: form,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                console.error('Erro: chat', data.error); // Mostra erros
+                
+            } else {
+                console.log('Sucesso:', data.success); // Pode redirecionar ou fazer outras ações
+            }
+        })
+        //.then(data => this.handle_response(data))
+        .catch(error => console.log(`Erro no fetch ${error}`));
 
     }
 }
 
-const loginForm = new SendSigninForm('.form_cadastro', '#btn_cadastro', 'check_signin.php');
+const loginForm = new SendSigninForm('.form_cadastro', '#btn_cadastro', 'register.php');

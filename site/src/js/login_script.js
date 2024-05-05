@@ -40,7 +40,7 @@ document.querySelector('#submit_btn').addEventListener('click', (e) => {
     .then(response => response.json()) // Processa como JSON
     .then(data => {
         if (data.error) {
-            console.error('Erro:', data.error); // Mostra erros
+            console.error('Erro: chat', data.error); // Mostra erros
             
         } else {
             console.log('Sucesso:', data.success); // Pode redirecionar ou fazer outras ações

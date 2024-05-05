@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require 'conexao.php';
+require_once 'conexao.php';
 $conn = connectionFactory::conexaoMysqli();
 
 if ($conn->connect_error) {
@@ -16,18 +16,17 @@ header('Content-Type: application/json'); // Define a resposta como JSON
 
 if (isset($_POST['user_input']) || isset($_POST['password'])) {
 
-    if (strlen($_POST['user_input']) == 0) {
-        echo json_encode(['error' => 'Preencha seu e-mail']);
-        exit;
-    }
-    if (strlen($_POST['password']) == 0) {
-        echo json_encode(['error' => 'Preencha sua senha']);
-        exit;
-    }
+    // if (strlen($_POST['user_input']) == 0) {
+    //     echo json_encode(['error' => 'Preencha seu e-mail']);
+    //     exit;
+    // }
+    // if (strlen($_POST['password']) == 0) {
+    //     echo json_encode(['error' => 'Preencha sua senha']);
+    //     exit;
+    // }
 
     $username = mysqli_real_escape_string($conn, $_POST['user_input']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
 
     if (empty($username) || empty($password)) {
         echo json_encode(["error" => "Por favor, insira um nome de usuário e senha válidos!"]);
@@ -53,15 +52,7 @@ if (isset($_POST['user_input']) || isset($_POST['password'])) {
         echo json_encode(['success' => 'Login realizado com sucesso.']);
     } else {
         echo json_encode(['error' => 'Usuário ou senha incorretos.']);
-
     }
-
 } else {
     echo json_encode(['error' => 'Falha ao logar, verifique os dados!']);
 }
-
-
-
-
-
-?>

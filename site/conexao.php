@@ -30,4 +30,3 @@ class connectionFactory
 		return $dbh;
 	}
 }
-?>
