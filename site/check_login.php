@@ -26,7 +26,7 @@ if (isset($_POST['user_input']) || isset($_POST['password'])) {
     }
 
     $username = mysqli_real_escape_string($conn, $_POST['user_input']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 
     if (empty($username) || empty($password)) {

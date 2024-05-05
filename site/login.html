@@ -80,13 +80,13 @@
 
         <form action="" class="row form_cadastro">
             <label class="label_sty labael_c" for="user_cred">Usuário</label>
-            <input id="user_cred" class="input_default" type="text" placeholder="">
+            <input id="user_cred" class="input_default" name="user" type="text" placeholder="">
             <label class="label_sty labael_c" for="pass_cred">E-mail</label>
-            <input id="email_cred" class="input_default" type="password">
+            <input id="email_cred" class="input_default" name="email" type="email">
             <label class="label_sty labael_c" for="pass_cred">Senha</label>
-            <input id="pass_cred" class="input_default" type="password">
+            <input id="pass_cred" class="input_default" name="password" type="password">
             <label class="label_sty labael_c" for="pass_cred">Confirmar senha</label>
-            <input id="con_pass_cred" class="input_default" type="password">
+            <input id="con_pass_cred" class="input_default" name="conf_password" type="password">
 
             <button id="btn_cadastro">Criar conta</button>
         </form>
@@ -95,7 +95,8 @@
     <section class="img_comp col-9 p-0">
     </section>
 
-    <script src="./src/js/script.js"></script>
+    <script src="./src/js/signin_script.js"></script>
+    <script src="./src/js/login_script.js"></script>
 </body>
 
 </html>

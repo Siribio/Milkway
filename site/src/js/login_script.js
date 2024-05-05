@@ -46,7 +46,7 @@ document.querySelector('#submit_btn').addEventListener('click', (e) => {
             console.log('Sucesso:', data.success); // Pode redirecionar ou fazer outras ações
         }
     })
-    .catch(error => console.error('Erro no fetch:', error));
+    .catch(error => console.log('Erro no fetch:', error));
 
 });
 
