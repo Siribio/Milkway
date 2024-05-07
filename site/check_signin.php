@@ -24,21 +24,32 @@ class User_Register
     {
         $id = $this->generate_id();
 
-        // if ($this->user_exists($username, $email, $id)) {
-        //     return "Usuário ou Email já cadastrados!";
-        // }
+        if ($this->user_exists($username, $email, $id)) {
+            return "Usuário ou Email já cadastrados!";
+        }
 
-
-        // if (!$this->validate_input($username, $password, $email)) {
-        //     return "Validação dos dados falhou.";
-        // }
+        $check_data_error = $this->check_data($password, $email);
+        if (strlen($check_data_error) != 0) {
+            return $check_data_error;
+        }
 
         return $this->insert_data($id, $username, $email, $password);
     }
 
-    private function validate_input($username, $password, $email)
+    private function check_data($password, $email)
     {
-        return filter_var($email, FILTER_VALIDATE_EMAIL) && strlen($username) > 5 && strlen($password) > 5;
+        $error = '';
+        $regex_password = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{10,}$/';
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error = 'Email inválido, verifique por gentileza!';
+        }
+
+        if (!preg_match($regex_password, $password)) {
+            $error = 'Senha invalida, verifique por gentileza!';
+        }
+
+        return $error;
     }
 
     private function insert_data($id, $username, $email, $password)
@@ -55,7 +66,8 @@ class User_Register
         $query->bind_param("ss", $username, $email);
         $query->execute();
 
-        return $query->fetch() !== false;
+        $result = $query->get_result();
+        return $result->num_rows > 0;  // Correção para o método de verificação
     }
 
     private function generate_id()
