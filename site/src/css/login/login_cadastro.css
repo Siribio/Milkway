@@ -1,4 +1,4 @@
-span#btn_return {
+span.btn_return {
   color: var(--purple-medium);
   font-size: 2vh;
   cursor: pointer;
@@ -50,30 +50,30 @@ button#submit_btn:hover {
   transform: scale(1.03);
 }
 
+.btn_return {
+  display: flex;
+  margin-top: 2vh;
+  cursor: pointer;
+  margin-left: 2%;
+  transition: all 0.3s;
+}
 
-#btn_return {
-    display: flex;
-    margin-top: 2vh;
-    cursor: pointer;
-    margin-left: 2%;
-    transition: all 0.3s;
-  }
-  
-  #btn_return:hover {
-    text-decoration: underline;
-  }
+.btn_return:hover {
+  text-decoration: underline;
+}
 
-section.cadastro_sec{
+section.cadastro_sec {
   flex-direction: column;
 }
 
-.cadastro_h3{
+.cadastro_h3 {
   display: flex;
   justify-content: center;
-  margin-top: 10vh
+  margin-top: 10vh;
+  padding-bottom: 2.5vh;
 }
 
-.labael_c{
+.labael_c {
   margin-top: 3vh !important;
 }
 
@@ -99,4 +99,67 @@ button#btn_cadastro {
 button#btn_cadastro:hover {
   background-color: var(--purple-medium);
   transform: scale(1.03);
+}
+
+.wrapper_error {
+  display: flex;
+  border: 2px solid red;
+  width: 87%;
+  margin: 0 auto;
+  height: auto;
+  border-radius: 5px;
+  background-color: #ffe6e6;
+  font-size: 13px;
+  padding: 0 2.5%;
+  color: red;
+  flex-direction: column;
+}
+
+.error_span {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  font-weight: 600;
+}
+
+.wrapper_sucess {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.wrapper_s_icon {
+  margin-top: 250px;
+  font-size: 60px;
+  color: #4ad06a;
+}
+
+.wrapper_s_msg {
+  display: flex;
+  margin-top: 15px;
+  font-size: 20px;
+  color: var(--dark-input);
+}
+
+.btn_s_login {
+  display: flex;
+  height: 60px;
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  border-radius: 10px;
+  background-color: #4ad06a;
+  color: var(--bs-white);
+  cursor: pointer;
+  margin-top: 55px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  transition: all 0.2s;
+}
+
+.btn_s_login:hover {
+  background-color: #139c33;
+  transform: scale(1.02);
 }

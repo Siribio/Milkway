@@ -23,7 +23,6 @@ form.form_login{
 
 form.form_login, form.form_cadastro {
   justify-content: center;
-  margin-top: 2.5vh;
 }
 
 #see_pass {

@@ -31,7 +31,7 @@
 <body ">
     <section class=" login_sec container-fluid col">
     <div class="div_btn_return">
-        <span id="btn_return">
+        <span class="btn_return">
             < Voltar</span>
     </div>
 
@@ -44,7 +44,7 @@
     <form action="" class="row form_login">
         <label class="label_sty" for="user_cred">Usuario</label>
         <input id="user_cred_in" class="input_default" type="text" placeholder="">
-        <label class="label_sty" for="pass_cred">Senha</label>
+        <label class="label_sty" for="pass_cred_in">Senha</label>
         <input id="pass_cred_in" class="input_default" type="password">
     </form>
 
@@ -72,30 +72,42 @@
 
     <section class="cadastro_sec container-fluid col">
         <div class="div_btn_return">
-            <span id="btn_return">
+            <span class="btn_return login_return">
                 < Voltar</span>
         </div>
 
         <h3 class="cadastro_h3">Cadastre-se</h3>
 
-        <form action="register.php"  method="post" class="row form_cadastro">
+        <div class="wrapper_error">
+            <span class="error_span">DIGITE ERRO 1</span>
+            <span class="error_span">&bull; A Senha deve conter Letras maiúsculas, minusculas, letras e caracteres especiais</span>
+        </div>
+
+        <form class="row form_cadastro">
             <label class="label_sty labael_c" for="user_cred">Usuário</label>
             <input id="user_cred" class="input_default" name="user" type="text" placeholder="">
             <label class="label_sty labael_c" for="pass_cred">E-mail</label>
             <input id="email_cred" class="input_default" name="email" type="email">
             <label class="label_sty labael_c" for="pass_cred">Senha</label>
-            <input id="pass_cred" class="input_default" name="password" type="password">
+            <input id="pass_cred_cad" class="input_default" name="password" type="password">
             <label class="label_sty labael_c" for="pass_cred">Confirmar senha</label>
             <input id="con_pass_cred" class="input_default" name="conf_password" type="password">
 
             <button id="btn_cadastro">Criar conta</button>
         </form>
+
+        <!-- <div class="wrapper_sucess">
+            <div class="wrapper_s_icon"><i class='bx bx-check-circle'></i></div>
+            <div class="wrapper_s_msg">O cadastro foi realizado com sucesso!</div>
+            <div class="btn_s_login">Fazer login</div>
+        </div> -->
     </section>
 
     <section class="img_comp col-9 p-0">
     </section>
 
-    <script src="./src/js/login_script.js"></script>
+    <script src="./src/js/login_sign.js"></script>
+    <script src="./src/js/signin_script.js"></script>
 </body>
 
 </html>

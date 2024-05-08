@@ -1,55 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 @font-face {
-    font-family: 'quartzo'; /* Define um nome para sua fonte */
-    src: url('./font/quartzo.ttf');
+  font-family: "quartzo"; /* Define um nome para sua fonte */
+  src: url("./font/quartzo.ttf");
 }
 
 :root {
-    --purple-medium: #BE35FF;
-    --purple-soft: #DC93FF;
-    --purple-header: #F6E3FF;
-    --dark-background: #1E1C19;
-    --dark-input: #3B3B3B;
-    --dark-button: #2F1932;
-    --dark-button-hover:#47264B;
-    --dark-font: #F2E2AF;
-    --dark-medium: #996D88;
-    --border-gray: #d8d8d8;
-    --light-black: #262626;
-    --darker-purple: #452c7a;
-    --btn-green: #9DDE13;
-    --background-color: #FAFAFA;
+  --purple-medium: #be35ff;
+  --purple-soft: #dc93ff;
+  --purple-header: #f6e3ff;
+  --dark-background: #1e1c19;
+  --dark-input: #3b3b3b;
+  --dark-button: #2f1932;
+  --dark-button-hover: #47264b;
+  --dark-font: #f2e2af;
+  --dark-medium: #996d88;
+  --border-gray: #d8d8d8;
+  --light-black: #262626;
+  --darker-purple: #452c7a;
+  --btn-green: #9dde13;
+  --background-color: #fafafa;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Nunito", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
 body {
-    display: flex;
-    max-width: 100dvw;
-    flex-direction: column;
-}
-  
-div.btn_buy_car{
-    display: flex;
-    position: fixed;
-    top: 83%;
-    right: 3%;
-    background-color: #504469;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-weight: bolder;
-    cursor: pointer;
-    font-size: 50px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  max-width: 100dvw;
+  flex-direction: column;
 }
 
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    display:none;
+    -webkit-mask: conic-gradient(from 15deg,#0000,#000);
+    animation: l26 1s infinite steps(12);
+    margin: auto;
+  }
+  .loader,
+  .loader:before,
+  .loader:after{
+    background:
+      radial-gradient(closest-side at 50% 12.5%,
+       #33f072 96%,#0000) 50% 0/20% 80% repeat-y,
+      radial-gradient(closest-side at 12.5% 50%,
+       #33f072 96%,#0000) 0 50%/80% 20% repeat-x;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    grid-area: 1/1;
+    transform: rotate(30deg);
+  }
+  .loader:after {
+    transform: rotate(60deg);
+  }
+  
+  @keyframes l26 {
+    100% {transform:rotate(1turn)}
+  }
+
+
+a {
+  text-decoration: none !important; /* Remove o sublinhado */
+}
+
+a:hover,
+a:active {
+  text-decoration: none !important; /* Remove o sublinhado */
+  color: white;
+}
+
+div.btn_buy_car {
+  display: flex;
+  position: fixed;
+  top: 83%;
+  right: 3%;
+  background-color: #504469;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bolder;
+  cursor: pointer;
+  font-size: 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
