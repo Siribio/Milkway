@@ -22,9 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user_register = new User_Register();
 
     $result = $user_register->register($username, $password, $email);
-    if (strlen($result) == 0) $result = "Cadastro realizado com sucesso";
+    if (strlen($result) == 0) {
+        echo json_encode(['success' => "Cadastro realizado com sucesso"]);
+    }
 
-    echo json_encode(['success' => "$result"]);
+    echo json_encode(['error_sign' => "$result"]);
 } else {
     echo json_encode(['error' => 'Formulário não processado!']);
 

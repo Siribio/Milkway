@@ -102,17 +102,20 @@ button#btn_cadastro:hover {
 }
 
 .wrapper_error {
-  display: flex;
-  border: 2px solid red;
+  display: none;
   width: 87%;
   margin: 0 auto;
   height: auto;
   border-radius: 5px;
-  background-color: #ffe6e6;
   font-size: 13px;
   padding: 0 2.5%;
-  color: red;
   flex-direction: column;
+}
+
+.error_color, .wrapper_error{
+  border: 2px solid red !important;
+  color: red !important;
+  background-color: #ffe6e6 !important;
 }
 
 .error_span {
