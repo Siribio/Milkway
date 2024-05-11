@@ -11,8 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $errors = [];
 
     if (empty($username)) $errors['error_user'] = "Preencha o campo de Usuário";
-    if (empty($password)) $errors['error_pass'] = "Preencha o campo de Senha";
     if (empty($email)) $errors['error_email'] = "Preencha o campo de Email";
+    if (empty($password)) $errors['error_pass'] = "Preencha o campo de Senha";
+
 
     if (!empty($errors)) {
         echo json_encode($errors); // Enviar todos os erros de uma vez

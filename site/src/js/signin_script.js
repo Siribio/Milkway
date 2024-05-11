@@ -41,8 +41,7 @@ class SendSigninForm {
           this.add_error(data);
         }
       })
-      //.then(data => this.handle_response(data))
-      .catch((error) => console.log(`Erro no fetch ${error}`));
+      //.catch((error) => console.log(`Erro no fetch ${error}`));
   }
 
   toggle_loader(bool) {
@@ -60,33 +59,45 @@ class SendSigninForm {
 
   add_error(errors) {
     Object.entries(errors).forEach(([key, value]) => {
-      if (key == "error_user" || key == "error_pass" || key == "error_email") {
-        return Object.defineProperties(this.errors, {
-          id: {
-            value: 1,
-            writable: false,
-          },
-          error_name: {
-            value: "Preencha os campos selecionados!",
-            writable: true,
-          },
-        });
-      }
-
-      if(key == 'error_sign'){
-        return Object.defineProperties(this.errors, {
-          id: {
-            value: 2,
-            writable: false
-          },
-          error_name: {
-            value: value,
-            writable: true
-          }
-        });
-      }
+      this.errors[`${key}`] = {
+        error: `• ${value}`
+      };
+      this.show_error(key)
     });
+    this.show_wrapper_error()
+
   }
+
+  show_error(error) {
+    
+    if(error == 'error_user') this.change_input('user_cred');
+    if(error == 'error_email') this.change_input('email_cred');
+    if(error == 'error_pass') this.change_input('pass_cred_cad');
+
+
+    // wr_error.style.display = "flex";
+    // 
+    console.log(error)
+  }
+
+  change_input(id){
+    document.querySelector(`#${id}`).classList.add("error_color")
+  }
+
+  show_wrapper_error(){
+    const wr_error = document.querySelector('.wrapper_error');
+    wr_error.style.display = 'flex';
+    Object.keys(this.errors).forEach(err => {
+      const err_ac = this.errors[`${err}`]
+      if(err_ac == 'error_user' || err_ac == 'error_email' || err_ac == 'error_pass'){
+        
+      }
+      const span = document.createElement("span");
+      span.classList.add("error_span");
+      span.textContent = this.errors[`${err}`].error;
+      wr_error.appendChild(span);
+    });
+  }q
 
   // show_error(error) {
   //   if (error.length == 0) error = "• Preencha os campos selecionados";
