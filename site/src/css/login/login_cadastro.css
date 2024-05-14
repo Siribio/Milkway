@@ -112,13 +112,14 @@ button#btn_cadastro:hover {
   flex-direction: column;
 }
 
-.error_color, .wrapper_error{
+.error_color, 
+.wrapper_error{
   border: 2px solid red !important;
   color: red !important;
   background-color: #ffe6e6 !important;
 }
 
-.error_span {
+.error_span, .error_set{
   display: flex;
   height: 50px;
   align-items: center;

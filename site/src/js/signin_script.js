@@ -18,9 +18,6 @@ class SendSigninForm {
     event.preventDefault();
 
     const form = new FormData(this.form);
-    for (let [key, value] of form.entries()) {
-      console.log(key, value);
-    }
     this.send_form_data(form);
   }
 
@@ -77,47 +74,62 @@ class SendSigninForm {
 
     // wr_error.style.display = "flex";
     // 
-    console.log(error)
   }
 
   change_input(id){
     document.querySelector(`#${id}`).classList.add("error_color")
   }
 
+  clean_error(){
+    const wr_error = document.querySelector('.wrapper_error');
+    wr_error.style.display = 'none';
+    wr_error.innerHTML = '';
+    const user_cred = document.querySelector('#user_cred')
+    const email_cred = document.querySelector('#email_cred')
+    const pass_cred_cad = document.querySelector('#pass_cred_cad')
+    const con_pass_cred = document.querySelector('#con_pass_cred')
+    Array.from(document.querySelector('#user_cred').classList).includes('error_color')
+    this.errors = new Object();
+
+  }
+
   show_wrapper_error(){
     const wr_error = document.querySelector('.wrapper_error');
     wr_error.style.display = 'flex';
+  
+    // Limpa mensagens de erro anteriores para evitar duplicação
+    wr_error.innerHTML = '';
+  
+    const general_error_types = ['error_user', 'error_email', 'error_pass'];
+    let errors_displayed = false;
+  
     Object.keys(this.errors).forEach(err => {
-      const err_ac = this.errors[`${err}`]
-      if(err_ac == 'error_user' || err_ac == 'error_email' || err_ac == 'error_pass'){
-        
+      const error_message = this.errors[err].error;
+  
+      // Verifica se o erro é um dos erros gerais
+      if (general_error_types.includes(err) && !errors_displayed) {
+        const span = document.createElement("span");
+        span.classList.add("error_set");
+        span.textContent = '• Preencha todos os campos marcados';
+        wr_error.appendChild(span);
+        errors_displayed = true; // Marca que a mensagem genérica foi adicionada
+      } else if (!general_error_types.includes(err)) {
+        // Para erros específicos não relacionados aos erros gerais
+        const span = document.createElement("span");
+        span.classList.add("error_span");
+        span.textContent = error_message;
+        wr_error.appendChild(span);
       }
-      const span = document.createElement("span");
-      span.classList.add("error_span");
-      span.textContent = this.errors[`${err}`].error;
-      wr_error.appendChild(span);
     });
-  }q
-
-  // show_error(error) {
-  //   if (error.length == 0) error = "• Preencha os campos selecionados";
-  //   const wr_error = document.querySelector(".wrapper_error");
-
-  //   try {
-  //     if (
-  //       wr_error.children[0].textContent ==
-  //         "• Preencha os campos selecionados" &&
-  //       error == "• Preencha os campos selecionados"
-  //     )
-  //       return;
-  //   } catch (error) {}
-
-  //   wr_error.style.display = "flex";
-  //   const span = document.createElement("span");
-  //   span.classList.add("error_span");
-  //   span.textContent = error;
-  //   wr_error.appendChild(span);
-  // }
+  
+    // Caso nenhum erro seja do tipo geral e ainda houver erros
+    if (!errors_displayed && Object.keys(this.errors).length > 0) {
+      const span = document.createElement("span");
+      span.classList.add("error_set");
+      span.textContent = '• Verifique os detalhes do erro';
+      wr_error.appendChild(span);
+    }
+  }
 
   visual_error(element) {
     document.querySelector(element).classList.add("error_color");
