@@ -19,9 +19,19 @@ class SendSigninForm {
 
     const form = new FormData(this.form);
     this.send_form_data(form);
+    this.form.addEventListener("click", (e) => {
+      this.clean_error()
+    })
   }
 
   send_form_data(form) {
+    const pass_cred_cad = document.querySelector('#pass_cred_cad').value
+    const con_pass_cred = document.querySelector('#con_pass_cred').value
+    if(pass_cred_cad !== con_pass_cred){
+      this.add_error({senhas: 'As senhas devem ser iguais!'})
+      return;
+    }
+
     //this.toggle_loader(true)
     fetch(this.url, {
       method: "POST",
@@ -30,7 +40,7 @@ class SendSigninForm {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          //this.toggle_loader(false);
+          this.toggle_loader(false);
           this.signin_sucess();
           console.log("Sucesso:", data.success); // Pode redirecionar ou fazer outras ações
         } else {
@@ -88,9 +98,17 @@ class SendSigninForm {
     const email_cred = document.querySelector('#email_cred')
     const pass_cred_cad = document.querySelector('#pass_cred_cad')
     const con_pass_cred = document.querySelector('#con_pass_cred')
-    Array.from(document.querySelector('#user_cred').classList).includes('error_color')
+
+    if (Array.from(user_cred.classList).includes('error_color')) this.remove_class(user_cred)
+    if (Array.from(email_cred.classList).includes('error_color')) this.remove_class(email_cred)
+    if (Array.from(pass_cred_cad.classList).includes('error_color')) this.remove_class(pass_cred_cad)
+
     this.errors = new Object();
 
+  }
+
+  remove_class(el){
+    el.classList.remove('error_color')
   }
 
   show_wrapper_error(){
@@ -123,12 +141,12 @@ class SendSigninForm {
     });
   
     // Caso nenhum erro seja do tipo geral e ainda houver erros
-    if (!errors_displayed && Object.keys(this.errors).length > 0) {
-      const span = document.createElement("span");
-      span.classList.add("error_set");
-      span.textContent = '• Verifique os detalhes do erro';
-      wr_error.appendChild(span);
-    }
+    // if (!errors_displayed && Object.keys(this.errors).length > 0) {
+    //   const span = document.createElement("span");
+    //   span.classList.add("error_set");
+    //   span.textContent = '• Verifique os detalhes do erro';
+    //   wr_error.appendChild(span);
+    // }
   }
 
   visual_error(element) {
@@ -162,6 +180,10 @@ class SendSigninForm {
     const brn_login = document.createElement("div");
     brn_login.className = "btn_s_login";
     brn_login.textContent = "Fazer login";
+
+    brn_login.addEventListener("click", e => {
+      location.reload()
+    })
 
     // Agora, adicione todas as divs criadas ao wrapper principal
     wrapper_sucess.appendChild(wrapper_icon);

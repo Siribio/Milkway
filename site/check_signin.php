@@ -46,7 +46,7 @@ class User_Register
         }
 
         if (!preg_match($regex_password, $password)) {
-            $error = 'Senha invalida, verifique por gentileza!';
+            $error = 'A senha deve ter 10 caracteres, incluindo números, letras maiúsculas e minúsculas, e símbolos.';
         }
 
         return $error;
