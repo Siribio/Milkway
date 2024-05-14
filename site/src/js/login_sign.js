@@ -41,20 +41,20 @@ document.querySelector('#submit_btn').addEventListener('click', (e) => {
     console.log(form_data);
 
     console.log('enviado')
-    fetch('check_login.php', {
+    fetch('login.php', {
         method: 'POST',
         body: form_data,
     })
     .then(response => response.json()) // Processa como JSON
     .then(data => {
-        if (data.error) {
-            console.error('Erro: chat', data.error); // Mostra erros
-            
-        } else {
+        if (data.success) {
             console.log('Sucesso:', data.success); // Pode redirecionar ou fazer outras ações
+        } else {
+            console.log('Erro: chat', data); // Mostra erros
+
         }
     })
-    .catch(error => console.log('Erro no fetch:', error));
+    //.catch(error => console.log('Erro no fetch:', error));
 
 });
 
