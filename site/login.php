@@ -8,8 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $errors = [];
 
-    if (empty($username)) $errors['error_user'] = "Preencha o campo de Usuário";
-    if (empty($password)) $errors['error_pass'] = "Preencha o campo de Senha";
+    if (empty($username)) $errors['error_pre'] = "Preencha todos os campos";
+    if (empty($password)) $errors['error_pre'] = "Preencha todos os campos";
 
     if (!empty($errors)) {
         echo json_encode($errors); // Enviar todos os erros de uma vez

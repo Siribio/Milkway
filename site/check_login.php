@@ -9,49 +9,95 @@ header('Content-Type: application/json'); // Define a resposta como JSON
 
 class User_Login
 {
-    private $conn;
+  private $conn;
 
-    public function __construct()
-    {
-        $this->conn = connectionFactory::conexaoMysqli(); //conecta banco
-        if ($this->conn->connect_error) {
-            die(json_encode(["error" => "Conexão falhou: " . $this->conn->connect_error]));
-        }
+  public function __construct()
+  {
+    $this->conn = connectionFactory::conexaoMysqli(); // conecta banco
+    if ($this->conn->connect_error) {
+      die(json_encode(["error" => "Conexão falhou: " . $this->conn->connect_error]));
+    }
+  }
+
+
+  private function set_token($username)
+  {
+    // Garante que todos os comandos anteriores foram processados
+    while ($this->conn->more_results() && $this->conn->next_result()) {
+      if ($res = $this->conn->store_result()) {
+        $res->free();
+      }
     }
 
-    public function login($username_string, $password_string)
-    {
-        $username = mysqli_real_escape_string($this->conn, $username_string);
-        $password = $password_string; // Senha não deve ser hasheada aqui, compara-se o hash do banco
+    // Gera um token de 64 caracteres
+    $token = bin2hex(random_bytes(32));
 
-        if (empty($username) || empty($password)) {
-            echo json_encode(["error" => "Por favor, insira um nome de usuário e senha válidos!"]);
-            exit;
-        }
+    try {
+      // Prepara a declaração SQL
+      $query = $this->conn->prepare("UPDATE usuario SET token = ? WHERE usuario = ?");
+      if (!$query) {
+        throw new Exception('Erro ao preparar: ' . $this->conn->error);
+      }
 
-        $query = $this->conn->prepare("SELECT * FROM `usuario` WHERE `usuario` = ?");
-        $query->bind_param('s', $username);
-        $query->execute();
-        $result = $query->get_result();
+      // Vincula os parâmetros
+      if (!$query->bind_param('ss', $token, $username)) {
+        throw new Exception('Erro ao vincular parâmetros: ' . $query->error);
+      }
 
-        if ($result->num_rows == 1) {
-            $user = $result->fetch_assoc();
-            // Adicione estas linhas para depuração:
-            echo json_encode(['error' => "Password from user: " . $password_string]);
-            echo json_encode(['error' => "Password from database: " . $user['senha']]);
-            exit;
-            if (password_verify($password_string, $user['senha'])) {
-                $_SESSION['id'] = $user['id_usuario'];
-                $_SESSION['name'] = $user['usuario'];
-                echo json_encode(['success' => 'Login realizado com sucesso.']);
-                exit;
-            } else {
-                echo json_encode(['error' => 'Senha incorreta.']);
-                exit;
-            }
-        } else {
-            echo json_encode(['error' => 'Usuário não encontrado.']);
-            exit;
-        }
+      // Executa a query
+      if (!$query->execute()) {
+        throw new Exception('Erro ao executar: ' . $query->error);
+      }
+
+      // Fecha a declaração
+      $query->close();
+    } catch (Exception $e) {
+      // Lida com exceções
+      die($e->getMessage());
     }
+  }
+
+
+  public function login($username_string, $password_string)
+  {
+    $username = mysqli_real_escape_string($this->conn, $username_string);
+    $password = $password_string; // Senha não deve ser hasheada aqui, compara-se o hash do banco
+
+    if (empty($username) || empty($password)) {
+      echo json_encode(["error" => "Por favor, insira um nome de usuário e senha válidos!"]);
+      exit;
+    }
+
+    $query = $this->conn->prepare("SELECT * FROM `usuario` WHERE `usuario` = ?");
+    $query->bind_param('s', $username);
+    $query->execute();
+    $result = $query->get_result();
+
+    if ($result->num_rows == 1) {
+      $user = $result->fetch_assoc();
+
+      // Verifique se a senha fornecida corresponde ao hash armazenado
+      if (password_verify($password_string, $user['senha'])) {
+        session_start();
+        $_SESSION['id'] = $user['id_usuario'];
+        $_SESSION['name'] = $user['usuario'];
+        $this->conn->next_result();
+        $this->set_token($username);
+
+        $query_login = $this->conn->prepare("SELECT id_usuario, usuario, email FROM `usuario` WHERE `usuario` = ?");
+        $query_login->bind_param('s', $username);
+        $query_login->execute();
+        $dados = $query_login->get_result();
+        $data = $dados->fetch_all(MYSQLI_ASSOC);
+        echo json_encode(['success' => $data]);
+        exit;
+      } else {
+        echo json_encode(['error' => 'Senha incorreta.']);
+        exit;
+      }
+    } else {
+      echo json_encode(['error' => 'Usuário não encontrado.']);
+      exit;
+    }
+  }
 }

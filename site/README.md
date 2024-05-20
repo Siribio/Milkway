@@ -90,3 +90,113 @@ Abra o arquivo de banco de dados no FileMaker Pro 16 ou superior.
 - **Documentação**: Consulte a documentação oficial do FileMaker e do Azure AD para obter informações mais detalhadas e específicas.
 
 Essa configuração permitirá que os usuários do seu sistema FileMaker se autentiquem usando suas credenciais do Azure AD, sem necessidade de logins adicionais, e também permitirá a autenticação baseada em grupos.
+
+
+
+Para hospedar uma aplicação Node.js com TypeScript e Express no IIS 10 do Windows Server 2019, siga estes passos:
+
+Passo 1: Configurar o Projeto Node.js
+Certifique-se de que seu projeto está configurado corretamente.
+Seu arquivo package.json deve estar conforme a estrutura abaixo:
+
+json
+Copiar código
+{
+  "name": "testet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "foxit-esign-testlib": "file:../../TS_GENERIC_LIB"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
+Certifique-se de que seu código TypeScript está compilando para JavaScript:
+Execute o comando abaixo para compilar o TypeScript:
+
+sh
+Copiar código
+npm run start
+Isso deve compilar seu código TypeScript e criar os arquivos JavaScript na pasta dist.
+
+Passo 2: Configurar o IIS para Hospedar a Aplicação Node.js
+Instale o Node.js no Servidor Windows:
+Baixe e instale o Node.js do site oficial nodejs.org.
+
+Instale o IIS e o Módulo de Redirecionamento:
+Abra o Gerenciador do Servidor.
+Selecione "Adicionar funções e recursos".
+Prossiga até "Funções de Servidor" e selecione "Servidor Web (IIS)".
+Na seção "Funções de Serviço", selecione "Regras de redirecionamento HTTP".
+Conclua a instalação.
+Instale o iisnode:
+Baixe e instale o iisnode do repositório do GitHub.
+
+Configurar o Site no IIS:
+Abra o Gerenciador do IIS.
+Clique com o botão direito em "Sites" e selecione "Adicionar Site".
+Configure as opções:
+Nome do site: MeuSiteNode
+Caminho físico: selecione a pasta onde está o seu projeto compilado.
+Porta: 80 (ou outra porta disponível)
+Selecione "Pool de Aplicativos" > "Adicionar Pool de Aplicativos" e configure:
+Nome: MeuAppPoolNode
+.NET CLR version: No Managed Code
+No painel à direita, selecione "Configurações Básicas" e configure para usar o pool de aplicativos criado.
+Configurar o Arquivo web.config:
+Crie um arquivo web.config na pasta raiz do seu projeto (onde está dist), com o seguinte conteúdo:
+
+xml
+Copiar código
+<configuration>
+  <system.webServer>
+    <handlers>
+      <add name="iisnode" path="dist/index.js" verb="*" modules="iisnode" />
+    </handlers>
+    <rewrite>
+      <rules>
+        <rule name="NodeInspector" patternSyntax="ECMAScript" stopProcessing="true">
+          <match url="^dist/index.js\/debug[\/]?" />
+        </rule>
+        <rule name="StaticContent">
+          <action type="Rewrite" url="public{REQUEST_URI}" />
+        </rule>
+        <rule name="DynamicContent">
+          <conditions>
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="True" />
+          </conditions>
+          <action type="Rewrite" url="dist/index.js" />
+        </rule>
+      </rules>
+    </rewrite>
+    <defaultDocument>
+      <files>
+        <add value="dist/index.js" />
+      </files>
+    </defaultDocument>
+    <directoryBrowse enabled="true" />
+  </system.webServer>
+</configuration>
+Configurar Variáveis de Ambiente no IIS:
+Se você usa variáveis de ambiente no seu arquivo .env, configure-as no IIS:
+
+No Gerenciador do IIS, selecione seu site.
+No painel à direita, clique em "Variáveis de Ambiente".
+Adicione suas variáveis (CLIENT_ID, CLIENT_SECRET, etc.).
+Passo 3: Testar a Aplicação
+Abra um navegador e vá para http://localhost (ou a URL configurada).
+Verifique se sua aplicação está funcionando conforme esperado.
+Resumo
+Este guia mostra como configurar um projeto Node.js com TypeScript e Express, e hospedar no IIS 10 no Windows Server 2019. Assegure-se de seguir cada passo cuidadosamente e verificar as configurações no IIS para garantir que tudo esteja correto. Se houver problemas, verifique os logs do IIS para diagnósticos adicionais.

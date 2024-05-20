@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user_register = new User_Register();
 
     $result = $user_register->register($username, $password, $email);
-    if (strlen($result) == 0) {
+    if (empty($result)) {
         echo json_encode(['success' => "Cadastro realizado com sucesso"]);
         exit();
     }

@@ -193,7 +193,7 @@ class SendSigninForm {
   }
 }
 
-const login_form = new SendSigninForm(
+const sign_form = new SendSigninForm(
   ".form_cadastro",
   "#btn_cadastro",
   ".cadastro_sec",

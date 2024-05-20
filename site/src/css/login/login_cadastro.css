@@ -123,6 +123,10 @@ button#btn_cadastro:hover {
   display: flex;
   height: 50px;
   align-items: center;
+  width: 86%;
+  margin: 0 auto;
+  margin-top: 15px;
+  border-radius: 10px;
   font-weight: 600;
 }
 
