@@ -15,15 +15,14 @@ require 'elementos_sistema.php';
     <link rel="stylesheet" href="src/css/sobre/style.css">
     <link rel="icon" href="./src/img/logo_milkway.png" type="image/png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
     <?php
-  $elemento = new elementos_sistema();
-  $elemento->imprimir_nav_bar();
-  ?>
+    $elemento = new elementos_sistema();
+    $elemento->imprimir_nav_bar();
+    ?>
 
     <main class="about_us">
         <section class="first_sec">
@@ -62,12 +61,14 @@ require 'elementos_sistema.php';
     </main>
 
     <?php
-      $elemento->btn_buy();
+    $elemento->btn_buy();
 
-  $elemento->imprimir_footer();
-  ?>
+    $elemento->imprimir_footer();
+    ?>
 
     <script src="./src/js/mobile.js"></script>
+    <script src="./src/js/feed_infos.js"></script>
+
 </body>
 
 </html>

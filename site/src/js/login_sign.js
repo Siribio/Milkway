@@ -57,9 +57,11 @@ class CheckLogin {
         .then(data => {
             if (data.success) {
                 console.log('Sucesso:', data.success); // Pode redirecionar ou fazer outras ações
+                localStorage.setItem('user', JSON.stringify(data.success));
+                window.location.href = 'http://localhost/milkway/site/home.php';
+
             } else {
                 console.log('Erro: chat', data); // Mostra erros
-    
             }
         })
         //.catch(error => console.log('Erro no fetch:', error));  

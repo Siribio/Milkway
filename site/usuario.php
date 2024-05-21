@@ -63,6 +63,8 @@ require 'elementos_sistema.php';
     </main>
 
     <script src="./src/js/mobile.js"></script>
+    <script src="./src/js/feed_infos.js"></script>
+
 </body>
 
 </html>

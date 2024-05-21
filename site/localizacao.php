@@ -1,5 +1,5 @@
 <?php
-require_once ('elementos_sistema.php');
+require_once('elementos_sistema.php');
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ require_once ('elementos_sistema.php');
     <?php
     $elemento = new elementos_sistema();
     $elemento->imprimir_nav_bar()
-        ?>
+    ?>
 
     <main class="main_loc">
         <section class="info">
@@ -42,6 +42,7 @@ require_once ('elementos_sistema.php');
         </div>
     </main>
 
+    <script src="./src/js/feed_infos.js"></script>
 
 </body>
 

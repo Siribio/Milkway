@@ -1,0 +1,17 @@
+.error_wrapper{
+    display: flex;
+    width: 100dvw;
+    height: 100dvh;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.wrapper_texto{
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: 46px;
+}
+
+.log_error{
+    color: var(--purple-medium);
+}

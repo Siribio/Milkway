@@ -31,7 +31,7 @@ class User_Login
 
     // Gera um token de 64 caracteres
     $token = bin2hex(random_bytes(32));
-
+    $_SESSION['token'] = $token;
     try {
       // Prepara a declaração SQL
       $query = $this->conn->prepare("UPDATE usuario SET token = ? WHERE usuario = ?");
@@ -78,7 +78,13 @@ class User_Login
 
       // Verifique se a senha fornecida corresponde ao hash armazenado
       if (password_verify($password_string, $user['senha'])) {
+        session_set_cookie_params([
+          'lifetime' => 3600,
+          'httponly' => true, // Impede acesso ao cookie via JavaScript
+        ]);
         session_start();
+        session_regenerate_id(true); // True para deletar o ID de sessão antigo
+
         $_SESSION['id'] = $user['id_usuario'];
         $_SESSION['name'] = $user['usuario'];
         $this->conn->next_result();

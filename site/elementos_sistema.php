@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author Eduardo Souza Gomes
  * email: eduardo.gomes.072020@gmail.com
@@ -36,7 +37,7 @@ class elementos_sistema
                 <li class="li_header"><a href="sobre.php">SOBRE NÓS</a></li>
                 <li class="li_header"><a href="localizacao.php">LOCALIZAÇÃO</a></li>
                 <li class="li_header"><a href="pedido.php">PEDIDO</a></li>
-                <li class="li_header" id="perfil_nav"><a href="usuario.php">EDUARDO</a></li>
+                <li class="li_header" id="perfil_nav"><a id="pefil_nav_cont" href="usuario.php"></a></li>
             </ul>
         </nav>
     </header>
@@ -72,8 +73,5 @@ class elementos_sistema
         ';
 
         echo $buy;
-
     }
 }
-
-?>

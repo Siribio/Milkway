@@ -5,7 +5,8 @@ require 'elementos_sistema.php';
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/css/main.css">
@@ -18,44 +19,45 @@ require 'elementos_sistema.php';
 
     <title>E-Sorveteria</title>
 
-  </head>
+</head>
 
-  <body>
-  <?php
+<body>
+    <?php
     $elemento = new elementos_sistema();
     $elemento->imprimir_nav_bar();
     ?>
-      
-    </div>
-      <main class="home">
-      <div class="row">
-        <div class="column">
-          <div class="esquerda">
-            <div class="ponta">
-              <p>FEITO COM<br />LEITE FRESCO</p>
-            </div>
-            <img src="./src/img/leite_1.webp" alt="" class="leite" />
-          </div>
-          <div class="texto">
-            <p>Uma nova forma de<br />montar sua felicidade.</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="column">
-          <div class="direita">
-            <img class="bola" src="./src/img/SORVETE-1_1.webp" alt="" />
-          </div>
+    </div>
+    <main class="home">
+        <div class="row">
+            <div class="column">
+                <div class="esquerda">
+                    <div class="ponta">
+                        <p>FEITO COM<br />LEITE FRESCO</p>
+                    </div>
+                    <img src="./src/img/leite_1.webp" alt="" class="leite" />
+                </div>
+                <div class="texto">
+                    <p>Uma nova forma de<br />montar sua felicidade.</p>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="row">
+            <div class="column">
+                <div class="direita">
+                    <img class="bola" src="./src/img/SORVETE-1_1.webp" alt="" />
+                </div>
+            </div>
+        </div>
     </main>
 
     <?php
     $elemento->btn_buy();
     $elemento->imprimir_footer();
     ?>
-        <script src="./src/js/mobile.js"></script>
+    <script src="./src/js/mobile.js"></script>
+    <script src="./src/js/feed_infos.js"></script>
+</body>
 
-  </body>
 </html>
