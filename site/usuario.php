@@ -1,4 +1,6 @@
 <?php
+require_once('check_redirect.php');
+
 require 'elementos_sistema.php';
 ?>
 
@@ -15,6 +17,7 @@ require 'elementos_sistema.php';
     <link rel="icon" href="./src/img/logo_milkway.webp type=" image/png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    <link rel="icon" href="./src/img/logo_milkway.png" type="image/png">
 
 
 </head>

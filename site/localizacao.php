@@ -1,4 +1,6 @@
 <?php
+require_once('check_redirect.php');
+
 require_once('elementos_sistema.php');
 ?>
 
@@ -42,6 +44,7 @@ require_once('elementos_sistema.php');
         </div>
     </main>
 
+    <script src="./src/js/mobile.js"></script>
     <script src="./src/js/feed_infos.js"></script>
 
 </body>

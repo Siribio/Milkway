@@ -1,4 +1,6 @@
 <?php
+require_once('check_redirect.php');
+
 require 'elementos_sistema.php';
 ?>
 
@@ -9,13 +11,15 @@ require 'elementos_sistema.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Sorveteria</title>
+    <link rel="stylesheet" href="src/css/main.css">
+
     <link rel="stylesheet" href="./src/css/header/header.css">
-    <link rel="stylesheet" href="./src/css/main.css">
     <link rel="stylesheet" href="./src/css/footer/footer.css">
     <link rel="stylesheet" href="src/css/sobre/style.css">
     <link rel="icon" href="./src/img/logo_milkway.png" type="image/png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>

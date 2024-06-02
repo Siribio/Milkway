@@ -1,0 +1,108 @@
+.pedido_main{
+    margin-bottom: 90px;
+}
+
+.header_main{
+    display: flex;
+    width: 100%;
+    height: 220px;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffdfea;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.pedido{
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 0 27px;
+    margin-top: 38px;
+    padding-bottom: 27px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.pedido_header{
+    display: flex;
+    font-weight: 800;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 32px;
+    padding-top: 30px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 7px;
+}
+
+.ph_sabores{
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 500;
+    height: 80px;
+}
+
+.sc_s{
+    font-size: 25px;
+}
+
+.sc_st{
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    padding: 28px 0;
+}
+
+.sabores_console, .acomp_console{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+}
+
+.sc_l{
+    display: flex;
+    align-items: center;
+    width: 450px;
+}
+
+.s_sty{
+    padding-left: 7%;
+    margin-left: 15px;
+    border-radius: 5px;
+}
+
+#car{
+    background-color: #20bd94;
+}
+
+#comp{
+    background-color: #6920bd;
+}
+
+.sec_btn{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn{
+    display: flex;
+    height: 70px;
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 9px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    color: #fff;
+    font-weight: 900;
+    transition: all .2s;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
