@@ -56,7 +56,7 @@ require 'elementos_sistema.php';
             </div>
             <div class="ph_sabores">
                 <span>Quantos acompanhamentos deseja:</span>
-                <select class="s_sty" name="" id="">
+                <select class="s_sty" name="" id="sel_acom">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -65,26 +65,7 @@ require 'elementos_sistema.php';
                     <option value="6">6</option>
                 </select>
             </div>
-            <div class="acomp_console">
-                <div class="sc_l">
-                    <span class="sc_s">selecione o adicional:</span>
-                    <select class="s_sty" name="" id=""></select>
-                </div>
-                <div class="sc_s" id="valor">R$ <span>6,00</span></div>
-            </div>
-            <div class="acomp_console">
-                <div class="sc_l">
-                    <span class="sc_s">selecione o adicional:</span>
-                    <select class="s_sty" name="" id=""></select>
-                </div>
-                <div class="sc_s" id="valor">R$ <span>6,00</span></div>
-            </div>
-            <div class="acomp_console">
-                <div class="sc_l">
-                    <span class="sc_s">selecione o adicional:</span>
-                    <select class="s_sty" name="" id=""></select>
-                </div>
-                <div class="sc_s" id="valor">R$ <span>6,00</span></div>
+            <div class="acomp_sec">
             </div>
             <div class="pedido_header">
                 Total pedido:

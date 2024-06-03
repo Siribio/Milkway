@@ -1,45 +1,60 @@
 class PedidoController {
     constructor() {
-        this.selectElement = document.querySelector('#sel_sabores');
-        this.saboresContainer = document.querySelector('.sabores_sec');
-        
-        this.selectElement.addEventListener('change', () => this.atualizar_sabores());
+        this.select_sab = document.querySelector('#sel_sabores');
+        this.select_acom = document.querySelector('#sel_acom')
+        this.sabores_container = document.querySelector('.sabores_sec');
+        this.acomp_container = document.querySelector('.acomp_sec')
+
+        this.get_sabores();
+
+        this.select_acom.addEventListener('change', () => this.atualizar_acompanhamentos())
+        this.atualizar_acompanhamentos();
+        this.select_sab.addEventListener('change', () => this.atualizar_sabores());
         this.atualizar_sabores(); // Inicializar com a quantidade padrão
+
+
     }
 
+    get_sabores(){
+        fetch(this.url, {
+            method: "POST",
+            body: form,
+        })
+    }
 
-    atualizar_sabores() {
-        const quantidade = parseInt(this.selectElement.value, 10);
-        this.limpar_sabores()
+    atualizar_acompanhamentos(){
+        const quantidade = parseInt(this.select_acom.value, 10);
+        this.limpar_append(this.acomp_container, '.acomp_console')
 
         for (let i = 0; i < quantidade; i++) {
-            this.adiciona_sec_sabor();
+            this.adicionar_sec(this.acomp_container, 'Selecione o acompanhamento:', 'acomp_console');
         }
     }
 
-    limpar_sabores() {
-        const saborElements = this.saboresContainer.querySelectorAll('.sabores_console');
+    atualizar_sabores() {
+        const quantidade = parseInt(this.select_sab.value, 10);
+        this.limpar_append(this.sabores_container ,'.sabores_console')
+
+        for (let i = 0; i < quantidade; i++) {
+            this.adicionar_sec(this.sabores_container, 'Selecione o sabor:', 'sabores_console');
+        }
+    }
+
+    limpar_append(elem_container, elem_class) {
+        const saborElements = elem_container.querySelectorAll(`${elem_class}`);
         saborElements.forEach(element => element.remove());
     }
 
-//     <!-- <div class="sabores_console">
-//     <div class="sc_l">
-//         <span class="sc_s">selecione o sabor:</span>
-//         <select class="s_sty" name="" id=""></select>
-//     </div>
-//      <div class="sc_s" id="valor">R$ <span>6,00</span></div>
-//     </div> -->
-
-    adiciona_sec_sabor() {
+    adicionar_sec(cont ,strin, group) {
         const saborDiv = document.createElement('div');
-        saborDiv.classList.add('sabores_console');
-        
+        saborDiv.classList.add(group)
+
         const sc_l = document.createElement('div');
         sc_l.classList.add('sc_l');
 
         const span = document.createElement('span');
         span.classList.add('sc_s');
-        span.textContent = 'Selecione o sabor:';
+        span.textContent = `${strin}`;
         
         const select = document.createElement('select');
         select.classList.add('s_sty');
@@ -62,11 +77,9 @@ class PedidoController {
         sc_l.appendChild(select);
         saborDiv.appendChild(sc_l)
         saborDiv.appendChild(sc_s)
-        this.saboresContainer.appendChild(saborDiv);
+        cont.appendChild(saborDiv);
     }
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    new PedidoController();
-});
+const pedido = new PedidoController();
