@@ -74,7 +74,7 @@ require 'elementos_sistema.php';
                 <span>Total do pedido:</span>
                 <div>
                     <span>R$</span>
-                    <span>6,00</span>
+                    <span id="total_pedido">6,00</span>
                 </div>
             </div>
             <div class="sec_btn">

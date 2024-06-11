@@ -25,11 +25,15 @@ require 'elementos_sistema.php';
 </head>
 
 <body>
+
     <?php
     $elemento = new elementos_sistema();
     $elemento->imprimir_nav_bar();
     ?>
-
+    <div class="pedido_mobile">
+        Faça o seu pedido
+        <a class="aqui" href="./pedido.php">Peça aqui!</a>
+    </div>
     </div>
     <main class="home">
         <div class="row">

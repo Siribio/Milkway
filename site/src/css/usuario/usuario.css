@@ -150,3 +150,28 @@ button#btn_edit:hover {
 #btn_verify:hover{
   background-color: #13de48;
 }
+
+@media only screen and (max-width: 600px) {
+  .table_info {
+    display: flex;
+    width: 113%;
+    border: 0.5px solid var(--border-gray);
+    height: 220px;
+    border-radius: 7px;
+}
+
+section.btn_edit_sec {
+  border-top: 0.5px solid var(--border-gray);
+  padding-left: 5%;
+  margin-top: 90%;
+}
+
+.user_info{
+  flex-direction: column;
+}
+
+button#btn_edit {
+  display: flex;
+  width: 83%;
+}
+}
