@@ -2,7 +2,7 @@ create database milkway
 
 use milkway
 
-CREATE TABLE usuarios (
+CREATE TABLE usuario (
     id_usuario VARCHAR(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
     usuario VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
     senha VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
@@ -11,26 +11,27 @@ CREATE TABLE usuarios (
     endereco VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
     token VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
     PRIMARY KEY (id_usuario)
-);
+)
 
 create table pedidos(
-    id_pedido int primary key auto_increment,
-    id_usuario int not null,
+    id_pedido varchar(11) not null,
+    id_usuario varchar(11) not null,
     valor float not null,
     status_pedido varchar(50) not null,
     id_produtos int not null,
     data_pedido date not null,
     endereco_entrega varchar(50) not null,
     forma_pagamento varchar(50) not null
-);
+)
 
 create table carrinho(
-    id_usuario int not null,
+    id_carrinho varchar(15) not null,
+    id_usuario varchar(6) not null,
     valor float not null,
     status_pedido varchar(50) not null,
-    id_produtos int not null,
+    id_produtos longtext not null,
     data_pedido date not null,
-);
+)
 
 CREATE TABLE estoque (
     id_produtos INT(11) NOT NULL AUTO_INCREMENT,
@@ -41,10 +42,6 @@ CREATE TABLE estoque (
     PRIMARY KEY (id_produtos)
 );
 
-insert into estoque values 
-    (null, 'CHOCOLATE', 50.0, 10.0),
-    (null, 'MORANGO', 30.0, 15.0),
-    (null, 'BAUNILHJA', 20.0, 20.0)
 
 
 insert into usuario values (null, 'eduardo', 'eduardo123', 'eduardo@email.com', 'null', 'ponte', 'aleatorio')
