@@ -89,6 +89,13 @@ h6 {
   border-bottom: 0.5px solid var(--border-gray);
 }
 
+.pedidos{
+  display: none;
+    height: 350px;
+    overflow-y: scroll;
+    flex-direction: column;
+}
+
 .cell {
   display: flex;
   height: 54.5px;
