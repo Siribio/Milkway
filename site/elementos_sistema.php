@@ -68,7 +68,9 @@ class elementos_sistema
     {
         $buy = '
         <div class="btn_buy_car">
-            <i class="bx bx-cart-alt"></i>
+            <a href="carrinho.php">
+                <i class="bx bx-cart-alt"></i>
+            </a>
         </div>
         ';
 

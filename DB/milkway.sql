@@ -24,6 +24,14 @@ create table pedidos(
     forma_pagamento varchar(50) not null
 );
 
+create table carrinho(
+    id_usuario int not null,
+    valor float not null,
+    status_pedido varchar(50) not null,
+    id_produtos int not null,
+    data_pedido date not null,
+);
+
 CREATE TABLE estoque (
     id_produtos INT(11) NOT NULL AUTO_INCREMENT,
     nome VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,

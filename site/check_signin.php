@@ -72,8 +72,8 @@ class User_Register
 
     private function generate_id()
     {
-        $letters = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 2);
-        $numbers = substr(str_shuffle("0123456789"), 0, 4);
+        $letters = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 5);
+        $numbers = substr(str_shuffle("0123456789"), 0, 10);
         $id = $letters . $numbers;
 
         while ($this->id_exists($id)) {

@@ -1,0 +1,239 @@
+body{
+    background-color: #f7f7f7;
+}
+
+main.carrinho{
+    display: flex;
+    max-width: 1200px;
+    width: 65vw;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: 30px;
+    height: 650px;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid #c6c6c6;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.bxs-cart{
+    color: #3dda37;
+}
+
+h4{
+    display: flex;
+    font-size: 35px;
+    height: 70px;
+    align-items: center;
+    letter-spacing: 1px;
+    padding: 10px;
+    color: #454545;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+.infos{
+    display: flex;
+    flex-basis: content;
+    width: 100%;
+    color: #454545;
+}
+
+.in_t{
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.in_td{
+    display: flex;
+    width: 60%;
+}
+.in_tq, .in_tp{
+    display: flex;
+    width: 18%;
+    justify-content: center;
+}
+
+.pedido{
+    display: flex;
+    height: 160px;
+}
+
+.sp_produto{
+    display: flex;
+    width: 60%;
+    height: 100%;
+    padding: 20px;
+}
+
+.sp_img{
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+    justify-content: center;
+    height: 120px;
+    color: #fff;
+    width: 120px;
+    border-radius: 8px;
+    background-color: #51a8d1;
+}
+
+.pedido_span{
+    padding: 2px 0;
+}
+
+.sp_desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+    letter-spacing: 0.55px;
+    font-size: 18px;
+}
+
+.sp_quantidade{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sp_excluir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    padding-right: 32px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #da3737 !important;
+}
+
+.bxs-x-circle{
+    cursor: pointer;
+
+}
+
+.sp_quantidade > input{
+    width: 25%;
+    height: 40px;
+    border: none;
+    box-shadow: rgb(49 98 153 / 30%) 0px 0px 0px 3px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.bxs-check-circle{
+    color: #0cee3d;
+    padding-left: 5px;
+}
+
+.mensagem {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    background-color: #ffffff;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.5s;
+    width: 300px;
+    height: 75px;
+    align-items: center;
+}
+
+.mensagem.mostrar {
+    display: flex;
+    opacity: 1;
+}
+
+.mensagem.ocultar {
+    opacity: 0;
+}
+
+.sec_carrinho{
+    display: flex;
+    flex-direction: column;
+    height: 380px;
+    overflow-y: scroll;
+}
+
+.sf_sec > input{
+    display: flex;
+    height: 35px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.sf_sec{
+    display: flex;
+    width: 240px;
+    height: 35px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 5px;
+}
+
+.btn_frete{
+    display: flex;
+    color: #fff;
+    font-weight: 700;
+    background-color: var(--btn-green);
+    height: 35px;
+    align-items: center;
+    width: 90px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    justify-content: center;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.sec_finalizar{
+    display: flex;
+    height: 131px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+}
+
+.sf_total{
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    font-size: 20px;
+    width: 25%;
+}
+
+.sft{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn_finalizar{
+    display: flex;
+    height: 55px;
+    width: 270px;
+    background-color: #5b84f6;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all .2s;
+    font-size: 19px;
+    margin-left: 67%;
+    margin-top: 20px;
+}

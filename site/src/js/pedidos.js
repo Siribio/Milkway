@@ -8,7 +8,7 @@ class PedidoController {
         this.acomp_container = document.querySelector('.acomp_sec')
 
         this.get_sabores();
-
+        this.pedido = new Array();
         this.select_acom.addEventListener('change', () => this.atualizar_acompanhamentos())
         this.atualizar_acompanhamentos();
         this.select_sab.addEventListener('change', () => this.atualizar_sabores());
@@ -70,15 +70,39 @@ class PedidoController {
     }
 
     change_value(select){
-        const value = select.value;
+        try{
+            const value = select.value;
+            const sabores = JSON.parse(localStorage.getItem('sabores')) || [];
+            const saborSelecionado = sabores.find(sabor => sabor.nome === value);
+            const id = select.classList[1].split('dd')[1]
+            document.querySelector(`.dd${id}`).parentNode
+            .parentNode.querySelector(`.valor${id}`).textContent = `${saborSelecionado.valor},00`
+            this.atualizar_total()
+        } catch(err){
+
+        }
+    }
+
+    adicionar_carrinho(){
         const sabores = JSON.parse(localStorage.getItem('sabores')) || [];
-        const saborSelecionado = sabores.find(sabor => sabor.nome === value);
-        const id = select.classList[1].split('dd')[1]
-        console.log(`document.querySelector(dd${id}).parentNode
-        .parentNode.querySelector(.valor${id}).textContent = ${saborSelecionado.valor},00`)
-        document.querySelector(`.dd${id}`).parentNode
-        .parentNode.querySelector(`.valor${id}`).textContent = `${saborSelecionado.valor},00`
-        this.atualizar_total()
+    
+        Array.from(document.querySelectorAll('.s_sty')).forEach(id => {
+            const saborSelecionado = sabores.find(sabor => sabor.nome === id.value);
+            console.log(saborSelecionado)
+            this.pedido.push({id: saborSelecionado.id_produtos, tipo: saborSelecionado.tipo})
+        })
+        console.log()
+        fetch('gerar_pedido.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.pedido)
+        })
+        .then(response => response.json())
+        .then(data => console.log('Success:', data))
+        .catch((error) => console.log('Error:', error));
+        this.pedido = new Array();
     }
 
     adicionar_sec(cont ,strin, group, tipo) {
@@ -93,11 +117,12 @@ class PedidoController {
         span.textContent = `${strin}`;
         
         const select = document.createElement('select');
+
         select.classList.add('s_sty');
+        
         select.classList.add(`dd${this.id}`);
         // Adicione opções ao select conforme necessário
         const sabores = JSON.parse(localStorage.getItem('sabores')) || [];
-        console.log(sabores)
         sabores
             .filter(sabor => sabor.tipo === `${tipo}`)
             .forEach(sabor => {
@@ -109,18 +134,10 @@ class PedidoController {
             select.addEventListener('change', () => {
                 this.change_value(select)
             })
-        // ['Sabor 1', 'Sabor 2', 'Sabor 3'].forEach(sabor => {
-        //     const option = document.createElement('option');
-        //     option.value = sabor;
-        //     option.textContent = sabor;
-        //     select.appendChild(option);
-        // });
-
         const sc_s = document.createElement('div');
         sc_s.classList.add('sc_s');
         sc_s.textContent = 'R$'
         const span1 = document.createElement('span');
-        console.log(`valor${this.id}`)
         span1.classList.add(`valor${this.id}`);
         span1.classList.add('calcula')
         span1.textContent = '6,00'
@@ -131,7 +148,7 @@ class PedidoController {
         saborDiv.appendChild(sc_l)
         saborDiv.appendChild(sc_s)
         cont.appendChild(saborDiv);
-
+        this.change_value(select)
         this.atualizar_total()
         this.id += 1; // Atualiza o id para o próximo elemento
     }
@@ -139,4 +156,21 @@ class PedidoController {
 
 
 const pedido = new PedidoController();
+document.querySelector('#car').addEventListener('click', e => {
+    console.log('adicionado');
+    const mensagem = document.getElementById('mensagem');
+    mensagem.classList.add('mostrar');
 
+    // Remove a classe 'ocultar' se estiver presente
+    mensagem.classList.remove('ocultar');
+
+    // Remove a mensagem após 3 segundos
+    setTimeout(() => {
+        mensagem.classList.add('ocultar');
+        // Espera a transição de opacidade antes de ocultar completamente
+        setTimeout(() => {
+            mensagem.classList.remove('mostrar');
+        }, 500);
+    }, 3000);
+    pedido.adicionar_carrinho()
+})

@@ -72,7 +72,7 @@ h4{
     width: 490px;
 }
 
-.s_sty{
+.s_sty, .s_styi{
     padding-left: 7%;
     margin-left: 15px;
     border-radius: 5px;
@@ -86,9 +86,43 @@ h4{
     background-color: #6920bd;
 }
 
+.bxs-check-circle{
+    color: #0cee3d;
+    padding-left: 5px;
+}
+
+.mensagem {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    background-color: #ffffff;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.5s;
+    width: 300px;
+    height: 75px;
+    align-items: center;
+}
+
+.mensagem.mostrar {
+    display: flex;
+    opacity: 1;
+}
+
+.mensagem.ocultar {
+    opacity: 0;
+}
+
+
+
+
 .sec_btn{
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     margin-top: 10px;
 }
 

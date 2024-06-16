@@ -16,6 +16,7 @@ require 'elementos_sistema.php';
     <link rel="stylesheet" href="./src/css/footer/footer.css">
     <link rel="stylesheet" href="./src/css/pedido/style.css">
     <link rel="icon" href="./src/img/logo_milkway.png" type="image/png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
@@ -24,6 +25,7 @@ require 'elementos_sistema.php';
     $elemento = new elementos_sistema();
     $elemento->imprimir_nav_bar();
     ?>
+    <div id="mensagem" class="mensagem">Pedido adicionado ao carrinho! <i class='bx bxs-check-circle'></i></div>
 
     <main class="pedido_main">
         <section class="header_main">
@@ -36,7 +38,7 @@ require 'elementos_sistema.php';
             </div>
             <div class="ph_sabores">
                 <span>Quantos sabores deseja:</span>
-                <select class="s_sty" name="" id="sel_sabores">
+                <select class="s_styi" name="" id="sel_sabores">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -56,7 +58,7 @@ require 'elementos_sistema.php';
             </div>
             <div class="ph_sabores">
                 <span>Quantos acompanhamentos deseja:</span>
-                <select class="s_sty" name="" id="sel_acom">
+                <select class="s_styi" name="" id="sel_acom">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -80,9 +82,6 @@ require 'elementos_sistema.php';
             <div class="sec_btn">
                 <div id="car" class="btn">
                     Adicione o pedido ao carrinho
-                </div>
-                <div id="comp" class="btn">
-                    Finalizar compra
                 </div>
             </div>
         </section>
